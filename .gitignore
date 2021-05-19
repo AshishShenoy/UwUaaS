@@ -1,0 +1,12 @@
+# IDE
+Session.vim
+.vscode
+
+# dependencies
+node_modules
+
+# production
+build
+
+# other
+.env

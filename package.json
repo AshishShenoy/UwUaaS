@@ -1,0 +1,31 @@
+{
+  "name": "uwuaas",
+  "version": "0.0.1",
+  "description": " API for all your uwuifying needs ",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.ts",
+    "build": "tsc --project ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshishShenoy/UwU-as-a-sewvice.git"
+  },
+  "author": "AshishShenoy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AshishShenoy/UwU-as-a-sewvice/issues"
+  },
+  "homepage": "https://github.com/AshishShenoy/UwU-as-a-sewvice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^15.3.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
