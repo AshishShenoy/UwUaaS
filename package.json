@@ -4,8 +4,8 @@
   "description": " API for all your uwuifying needs ",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts",
+    "test": "nodemon index.ts",
+    "start": "node ./build/index.js",
     "build": "tsc --project ./"
   },
   "repository": {
