@@ -1,9 +1,23 @@
 import express from "express";
+import uwuifier from "./uwufier/uwuify";
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+app.use(express.json());
+const PORT = process.env.PORT || "8000";
 
-app.get("/", (req, res) => res.send("UwU as a Sewvice :)"));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
+app.get("/api", (req, res) => {
+  if (req.body && req.body.text) {
+    res.status(200).json({
+      text: uwuifier.uwuifySentence(req.body.text),
+    });
+  } else {
+    res.status(200).json({ text: "" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);

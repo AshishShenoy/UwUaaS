@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/AshishShenoy/UwU-as-a-sewvice#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uwuifier": "^3.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
