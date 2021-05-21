@@ -3,6 +3,7 @@ import uwuifier from "./uwufier/uwuify";
 
 const app = express();
 app.use(express.json());
+app.use(express.static("public"));
 const PORT = process.env.PORT || "8000";
 
 app.get("/", (req, res) => {
