@@ -1,6 +1,6 @@
 {
   "name": "uwuaas",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": " API for all your uwuifying needs ",
   "main": "index.ts",
   "scripts": {
