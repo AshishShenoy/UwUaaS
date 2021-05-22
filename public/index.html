@@ -2,9 +2,165 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: #393e46;
+        background: #aad8d3;
+        margin: 0px;
+      }
+      .container > div {
+        padding: 5em 20% 5em 20%;
+        margin: auto;
+      }
+      .container > div:nth-child(2n) {
+        background: #00adb5;
+      }
+      .intro {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+      }
+      .intro-img {
+        width: 50%;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .creative-img {
+        width: 30%;
+      }
+      .docs {
+        font-size: 1.2rem;
+      }
+      textarea {
+        border: 0px;
+        border-radius: 15px;
+        font: 1.1rem monospace;
+        background: #393e46;
+        color: #aad8d3;
+        padding: 1rem;
+        outline: none;
+      }
+      .playground-section {
+        display: flex;
+        flex-direction: column;
+      }
+      .playground-intro {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        align-items: center;
+      }
+      .playground {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .playground > button {
+        background: #aad8d3;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.5rem;
+      }
+    </style>
     <title>UwU as a Sewvice! ÚwÚ</title>
   </head>
   <body>
-    UwU as a Sewvice! ÚwÚ
+    <div class="container">
+      <div class="intro">
+        <div class="intro-message">
+          <h1>UwU as a Sewvice</h1>
+          <p>API for all your uwuifying needs.</p>
+        </div>
+        <img class="intro-img" src="images/uwu.png" alt="Intro Image" />
+      </div>
+
+      <div class="info">
+        <h2>Let our API deliver instant uwuification of your favourite text</h2>
+        <img
+          class="creative-img"
+          src="images/creative.png"
+          alt="Unleash your Creativity"
+        />
+        <h2>
+          Unleash your creativity with the most flexible Uwuifying solution ever
+        </h2>
+      </div>
+
+      <div class="docs">
+        <h2>UwUaaS Public API Docs</h2>
+        <p>
+          UwUaaS is a public API that returns JSON
+          <br />
+          API URL:
+          <a href="https://uwuaas.herokuapp.com/api/"
+            >https://uwuaas.herokuapp.com/api/
+          </a>
+        </p>
+
+        <h3>1. POST /api/</h3>
+        <p>Request Body:</p>
+        <textarea readonly cols="40" rows="4">
+{
+    "text": "Hello, World!"
+}
+    </textarea
+        >
+        <p>Response JSON:</p>
+        <textarea readonly cols="40" rows="4">
+{
+    "text": "Hewwo, Wowwd!11!!"
+}
+    </textarea
+        >
+      </div>
+
+      <div class="playground-section">
+        <div class="playground-intro">
+          <h2>Try it out in our Interactive Playground!</h2>
+        </div>
+        <div class="playground">
+          <textarea
+            id="src"
+            placeholder="Text goes here"
+            spellcheck="false"
+            cols="40"
+            rows="10"
+          ></textarea>
+          <button id="uwuify">Uwuify!</button>
+          <textarea
+            readonly
+            id="dest"
+            placeholder="Magic arrives here"
+            cols="40"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <script>
+      function uwuify(e) {
+        const src = document.getElementById("src");
+
+        fetch("/api", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: src.value }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const dest = document.getElementById("dest");
+            dest.value = data.text;
+          });
+      }
+
+      document.getElementById("uwuify").addEventListener("click", uwuify);
+    </script>
   </body>
 </html>

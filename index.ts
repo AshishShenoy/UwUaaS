@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get("/api", (req, res) => {
+app.post("/api", (req, res) => {
   if (req.body && req.body.text) {
     res.status(200).json({
       text: uwuifier.uwuifySentence(req.body.text),
