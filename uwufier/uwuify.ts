@@ -15,19 +15,15 @@ uwuifier.faces = [
 ];
 
 uwuifier.actions = [
+  "*thinks about your bulge*",
   "*blushes*",
+  "*twerks*",
   "*whispers to self*",
   "*pounces on you*",
-  "*cries*",
-  "*screams*",
   "*sweats*",
-  "*twerks*",
-  "*runs away*",
   "*screeches*",
-  "*sees bulge*",
   "*looks at you*",
-  "*notices buldge*",
-  "*thinks about your bulge*",
+  "*notices bulge*",
   "*starts twerking*",
   "*huggles tightly*",
   "*boops your nose*",
