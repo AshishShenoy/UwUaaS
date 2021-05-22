@@ -43,6 +43,10 @@
         color: #aad8d3;
         padding: 1rem;
         outline: none;
+        scrollbar-width: none;
+      }
+      ::-webkit-scrollbar {
+        display: none;
       }
       .playground-section {
         display: flex;
@@ -55,6 +59,7 @@
         align-items: center;
       }
       .playground {
+        padding-top: 75px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -62,7 +67,6 @@
       }
       .playground > button {
         background: #aad8d3;
-        border: none;
         border-radius: 5px;
         font-size: 1.5rem;
       }
@@ -129,7 +133,7 @@
             placeholder="Text goes here"
             spellcheck="false"
             cols="40"
-            rows="10"
+            rows="20"
           ></textarea>
           <button id="uwuify">Uwuify!</button>
           <textarea
@@ -137,7 +141,7 @@
             id="dest"
             placeholder="Magic arrives here"
             cols="40"
-            rows="10"
+            rows="20"
           ></textarea>
         </div>
       </div>
